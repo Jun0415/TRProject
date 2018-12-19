@@ -19,6 +19,6 @@ public class TitleManager : MonoBehaviour
 
     public void PushStartButton()
     {
-        SceneManager.LoadScene("GameScene");   //ゲームシーンへ
+        SceneManager.LoadScene("GameScene2");   //ゲームシーンへ
     }
 }
