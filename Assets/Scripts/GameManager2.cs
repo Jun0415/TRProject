@@ -20,10 +20,12 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject buttonDesk2;
 	public GameObject imageDesk1;
 	public GameObject buttonMemo;
+	public GameObject imageIcon1;
 
 	// Use this for initialization
 	void Start () {
-		wallNo = WALL1;
+		wallNo = WALL2;
+		DisplayWall();
 	}
 	
 	// Update is called once per frame
@@ -69,6 +71,7 @@ public class GameManager2 : MonoBehaviour {
 
 	public void PushButtonMemo() {
 		buttonMemo.SetActive(false);
+		imageIcon1.SetActive(true);
 		DisplayMessage("メモにメッセージが書いてある。");
 	}
 
