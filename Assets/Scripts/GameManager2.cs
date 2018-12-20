@@ -18,6 +18,8 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject buttonMessageText;
 	public GameObject buttonDesk1;
 	public GameObject buttonDesk2;
+	public GameObject imageDesk1;
+	public GameObject buttonMemo;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +65,11 @@ public class GameManager2 : MonoBehaviour {
 
 	public void PushButtonLock() {
 		SceneManager.LoadScene("ClearScene");
+	}
+
+	public void PushButtonMemo() {
+		buttonMemo.SetActive(false);
+		DisplayMessage("メモにメッセージが書いてある。");
 	}
 
 	void DisplayWall() {
