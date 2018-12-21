@@ -26,6 +26,7 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject buttonMemo;
 	public GameObject buttonIcon1;
 	public GameObject buttonCloseUp;
+	public GameObject buttonWall;
 
 	// Use this for initialization
 	void Start () {
@@ -85,11 +86,18 @@ public class GameManager2 : MonoBehaviour {
 
 	public void ClearButtonCloseUp() {
 		buttonCloseUp.SetActive(false);
+		buttonWall.SetActive(false);
+		ClearMessages(); //////////汚いから後で直す。
 	}
 
 	public void CloseUpItem(int itemID) {
 		buttonCloseUp.GetComponent<Image>().sprite = items[itemID];
 		buttonCloseUp.SetActive(true);
+		buttonWall.SetActive(true);
+	}
+
+	public void PushButtonWall() {
+
 	}
 
 	void DisplayWall() {
