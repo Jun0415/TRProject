@@ -327,18 +327,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /home/jun/Unity-2017.4.4f1/TRP
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 30280000
-    m_LastClickedID: 10288
+    m_SelectedIDs: fc270000
+    m_LastClickedID: 10236
     m_ExpandedIDs: 000000006c270000b427000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c290000
-    m_LastClickedID: 10508
-    m_ExpandedIDs: 9efbffff000000007228000092280000c8280000d2280000fc280000142900001c290000
+    m_SelectedIDs: 2e2d0000
+    m_LastClickedID: 11566
+    m_ExpandedIDs: c0d7ffff5eddffff84e6ffff9efbffff0000000072280000c8280000d2280000fc2800001c290000262900002e2b0000662c00009c2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.6931076, y: 0.24303527, z: 89.992256}
+    m_Target: {x: 12.597476, y: 2.2769876, z: 89.93359}
     speed: 2
-    m_Value: {x: 7.6931076, y: 0.24303527, z: 89.992256}
+    m_Value: {x: 12.597476, y: 2.2769876, z: 89.93359}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -573,9 +573,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 12.097614
+    m_Target: 17.70441
     speed: 2
-    m_Value: 12.097614
+    m_Value: 17.70441
   m_Ortho:
     m_Target: 1
     speed: 2

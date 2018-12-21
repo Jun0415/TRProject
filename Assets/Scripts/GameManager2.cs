@@ -11,7 +11,11 @@ public class GameManager2 : MonoBehaviour {
 	public const int WALL3 = 3;
 	public const int WALL4 = 4;
 	public const int WALL5 = 5;
+	public const int MEMO_ID = 0;
+	public const int ITEM2_ID = 1;
+	public const int ITEM3_ID = 2;
 
+	public Sprite[] items = new Sprite[3];
 	public GameObject panelWalls;
 	private int wallNo;
 	public GameObject buttonMessage;
@@ -20,7 +24,8 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject buttonDesk2;
 	public GameObject imageDesk1;
 	public GameObject buttonMemo;
-	public GameObject imageIcon1;
+	public GameObject buttonIcon1;
+	public GameObject buttonCloseUp;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +46,7 @@ public class GameManager2 : MonoBehaviour {
 		}
 		DisplayWall();
 		ClearMessages();
+		ClearButtonCloseUp();
 	}
 
 	public void PushButtonLeft() {
@@ -51,6 +57,7 @@ public class GameManager2 : MonoBehaviour {
 		}
 		DisplayWall();
 		ClearMessages();
+		ClearButtonCloseUp();
 	}
 
 	public void PushButtonDesk1() {
@@ -71,8 +78,18 @@ public class GameManager2 : MonoBehaviour {
 
 	public void PushButtonMemo() {
 		buttonMemo.SetActive(false);
-		imageIcon1.SetActive(true);
-		DisplayMessage("メモにメッセージが書いてある。");
+		CloseUpItem(MEMO_ID);
+		buttonIcon1.SetActive(true);
+		DisplayMessage("メモ取得時メッセージ");
+	}
+
+	public void ClearButtonCloseUp() {
+		buttonCloseUp.SetActive(false);
+	}
+
+	public void CloseUpItem(int itemID) {
+		buttonCloseUp.GetComponent<Image>().sprite = items[itemID];
+		buttonCloseUp.SetActive(true);
 	}
 
 	void DisplayWall() {
@@ -98,6 +115,12 @@ public class GameManager2 : MonoBehaviour {
 	void DisplayMessage(string mes) {
 		buttonMessage.SetActive(true);
 		buttonMessageText.GetComponent<Text>().text = mes;
+	}
+
+	void DisplayInitalMessage() {
+		string[] messages = {"", "", ""};
+		buttonMessage.SetActive(true);
+		buttonMessageText.GetComponent<Text>().text = messages[0];
 	}
 
 	void ClearMessages() {
