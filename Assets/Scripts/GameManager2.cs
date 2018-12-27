@@ -12,8 +12,8 @@ public class GameManager2 : MonoBehaviour {
 	public const int WALL4 = 4;
 	public const int WALL5 = 5;
 	public const int MEMO_ID = 0;
-	public const int ITEM2_ID = 1;
-	public const int ITEM3_ID = 2;
+	public const int BOOK_ID = 1;
+	public const int FLOWER_ID = 2;
 
 	public Sprite[] items = new Sprite[3];
 	public GameObject panelWalls;
@@ -24,9 +24,18 @@ public class GameManager2 : MonoBehaviour {
 	public GameObject buttonDesk2;
 	public GameObject imageDesk1;
 	public GameObject buttonMemo;
+	public GameObject buttonBook;
+	public GameObject buttonFlower;
 	public GameObject buttonIcon1;
+	public GameObject buttonIcon2;
+	public GameObject buttonIcon3;
 	public GameObject buttonCloseUp;
 	public GameObject buttonWall;
+	public GameObject[] switches = new GameObject[3];
+	public Sprite switch_on;
+	public InputField[] answers = new InputField[3];
+
+	private bool doesHaveQ3 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -84,6 +93,23 @@ public class GameManager2 : MonoBehaviour {
 		DisplayMessage("メモ取得時メッセージ");
 	}
 
+	public void PushButtonBook() {
+		buttonBook.SetActive(false);
+		CloseUpItem(BOOK_ID);
+		buttonIcon2.SetActive(true);
+		DisplayMessage("BOOK取得時メッセージ");
+	}
+
+	public void PushButtonFlower()　{
+		if (doesHaveQ3 == false) {
+//			buttonFlower.SetActive(false);
+			CloseUpItem(FLOWER_ID);
+			buttonIcon3.SetActive(true);
+			DisplayMessage("FLOWER取得時メッセージ");
+			doesHaveQ3 = true;
+		}
+	}
+
 	public void ClearButtonCloseUp() {
 		buttonCloseUp.SetActive(false);
 		buttonWall.SetActive(false);
@@ -98,6 +124,28 @@ public class GameManager2 : MonoBehaviour {
 
 	public void PushButtonWall() {
 
+	}
+
+	public void CheckAnswer(int index) {
+		string ans = answers[index].GetComponent<InputField>().text.ToString();
+		Debug.Log(ans);
+		switch (index) {
+			case 0:
+				if (ans.Equals("98")) {
+					switches[index].GetComponent<Image>().sprite = switch_on;
+				}
+				break;
+			case 1:
+				if (ans.Equals("60")) {
+					switches[index].GetComponent<Image>().sprite = switch_on;
+				}
+				break;
+			case 2:
+				if (ans.Equals("36")) {
+					switches[index].GetComponent<Image>().sprite = switch_on;
+				}
+				break;
+		}
 	}
 
 	void DisplayWall() {
