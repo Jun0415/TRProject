@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
 	private bool doneQ1 = false;
 	private bool doneQ2 = false;
 	private bool doneQ3 = false;
+	private bool atFirstTimeWall1 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour {
 		DisplayWall();
 		ClearMessages();
 		ClearButtonCloseUp();
+		CheckWall1FirstTime();
 	}
 
 	public void PushButtonLeft() {
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour {
 		DisplayWall();
 		ClearMessages();
 		ClearButtonCloseUp();
+		CheckWall1FirstTime();
 	}
 
 	public void PushButtonDesk1() {
@@ -227,5 +230,12 @@ public class GameManager : MonoBehaviour {
 
 	void ClearMessages() {
 		buttonMessage.SetActive(false);
+	}
+
+	void CheckWall1FirstTime() {
+		if (atFirstTimeWall1 == false && wallNo == WALL1) {
+			DisplayMessage("あれ！ドアに鍵がかかってる！？");
+			atFirstTimeWall1 = true;
+		}
 	}
 }
