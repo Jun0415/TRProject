@@ -1,4 +1,0 @@
-#Sun Dec 30 16:08:35 JST 2018
-base.0=/home/jun/Unity-2017.4.4f1/TRP/Temp/gradleOut/build/intermediates/transforms/dex/release/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/home/jun/Unity-2017.4.4f1/TRP/Temp/gradleOut/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex

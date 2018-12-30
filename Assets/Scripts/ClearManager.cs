@@ -18,8 +18,8 @@ public class ClearManager : MonoBehaviour {
 	}
 
 	private string[] messages = { "やった！ やっと出られたぞ！",
-						  "これで家に帰れ……って、もう6時か",
-						  "……出社しよう。今日も仕事頑張ろう……" };
+						  "これで家に帰れ……って、もう\n朝の6時か――",
+						  "……出社しよう。\n今日も仕事頑張ろう……。" };
 	private int messageIndex = 0;
 
 	public GameObject buttonMessage;

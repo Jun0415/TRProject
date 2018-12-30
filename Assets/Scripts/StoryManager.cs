@@ -16,9 +16,9 @@ public class StoryManager : MonoBehaviour {
 
 	}
 
-	private string[] messages = { "あれ……ここは……",
-						  "あぁ、そうか……部長に残業を頼まれて",
-						  "……そろそろ家へ帰るか" };
+	private string[] messages = { "あれ……ここは……。",
+						  "あぁ、そうか……部長に残業を頼まれて――",
+						  "……そろそろ家へ帰るか。" };
 	private int messageIndex = 0;
 
 	public GameObject buttonMessage;

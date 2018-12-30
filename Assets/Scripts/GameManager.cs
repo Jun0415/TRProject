@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 	private int wallNo;
 	public GameObject buttonMessage;
 	public GameObject buttonMessageText;
+	public GameObject buttonMessageAtFirstWall1;
+	public GameObject buttonMessageAtFirstWall1Text;
 	public GameObject buttonDesk1;
 	public GameObject buttonDesk2;
 	public GameObject imageDesk1;
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject buttonIcon4;
 	public GameObject buttonCloseUp;
 	public GameObject buttonWall;
+	public GameObject buttonWall2;
 	public GameObject[] switches = new GameObject[3];
 	public Sprite switch_on;
 	public InputField[] answers = new InputField[3];
@@ -86,11 +89,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void PushButtonDesk1() {
-		DisplayMessage("先輩の机だ。\n散らかっている。");
+		DisplayMessage("俺の机だ。あれ、このメモって……。");
 	}
 
 	public void PushButtonDesk2() {
-		DisplayMessage("部長の机だ。\n整理されている。");
+		DisplayMessage("部長の机だ。もしかしてここにもヒントが……？");
 	}
 
 	public void PushButtonMessage() {
@@ -109,15 +112,15 @@ public class GameManager : MonoBehaviour {
 		buttonMemo.SetActive(false);
 		CloseUpItem(MEMO_ID);
 		buttonIcon1.SetActive(true);
-		DisplayMessage("MEMO取得時メッセージ");
+		DisplayMessage("このメモ……何かの問題か？");
 		doesHaveQ1 = true;
 	}
 
 	public void PushButtonBook() {
-		buttonBook.SetActive(false);
+			buttonBook.SetActive(false);
 		CloseUpItem(BOOK_ID);
 		buttonIcon2.SetActive(true);
-		DisplayMessage("BOOK取得時メッセージ");
+		DisplayMessage("あれ、この本……メモが挟まってるぞ！");
 		doesHaveQ2 = true;
 	}
 
@@ -125,7 +128,7 @@ public class GameManager : MonoBehaviour {
 		if (doesHaveQ3 == false) {
 			CloseUpItem(FLOWER_ID);
 			buttonIcon3.SetActive(true);
-			DisplayMessage("FLOWER取得時メッセージ");
+			DisplayMessage("鉢の裏にメモが隠されていた！");
 			doesHaveQ3 = true;
 		}
 	}
@@ -157,7 +160,7 @@ public class GameManager : MonoBehaviour {
 						doneQ1 = true;
 					}
 				} else {
-					DisplayMessage("回答するための問題を持っていない…。");
+					DisplayMessage("回答するための問題を持っていないようだ。");
 				}
 				break;
 			case 1:
@@ -168,7 +171,7 @@ public class GameManager : MonoBehaviour {
 						doneQ2 = true;
 					}
 				} else {
-					DisplayMessage("回答するための問題を持っていない…。");
+					DisplayMessage("回答するための問題を持っていないようだ。");
 				}
 				break;
 			case 2:
@@ -179,7 +182,7 @@ public class GameManager : MonoBehaviour {
 						doneQ3 = true;
 					}
 				} else {
-					DisplayMessage("回答するための問題を持っていない…。");
+					DisplayMessage("回答するための問題を持っていないようだ。");
 				}
 				break;
 		}
@@ -193,7 +196,7 @@ public class GameManager : MonoBehaviour {
 		buttonKey.SetActive(false);
 		CloseUpItem(KEY_ID);
 		buttonIcon4.SetActive(true);
-		DisplayMessage("KEY取得時メッセージ");
+		DisplayMessage("鍵だ！");
 		doesHaveKey = true;
 	}
 
@@ -220,12 +223,21 @@ public class GameManager : MonoBehaviour {
 	void DisplayMessage(string mes) {
 		buttonMessage.SetActive(true);
 		buttonMessageText.GetComponent<Text>().text = mes;
+		buttonWall.SetActive(true);
 	}
 
-	void DisplayInitalMessage() {
-		string[] messages = {"", "", ""};
-		buttonMessage.SetActive(true);
-		buttonMessageText.GetComponent<Text>().text = messages[0];
+	private string[] m = { "あれ！ ドアに鍵がかかってる！？", "残業が終わるまで帰さないってか……？ ブラックすぎるだろ！ 絶対に脱出してやる！！" };
+	private int index = 0;
+	public void DisplayMessageWall1()　{
+		if (m.Length <= index) {
+			buttonMessageAtFirstWall1.SetActive(false);
+			buttonWall2.SetActive(false);
+		} else {
+			buttonMessageAtFirstWall1.SetActive(true);
+			buttonMessageAtFirstWall1Text.GetComponent<Text>().text = m[index];
+			buttonWall2.SetActive(true);
+			index++;
+		}
 	}
 
 	void ClearMessages() {
@@ -234,7 +246,7 @@ public class GameManager : MonoBehaviour {
 
 	void CheckWall1FirstTime() {
 		if (atFirstTimeWall1 == false && wallNo == WALL1) {
-			DisplayMessage("あれ！ドアに鍵がかかってる！？");
+			DisplayMessageWall1();
 			atFirstTimeWall1 = true;
 		}
 	}
