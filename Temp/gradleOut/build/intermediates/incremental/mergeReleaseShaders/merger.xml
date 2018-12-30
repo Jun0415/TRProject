@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/jun/Unity-2017.4.4f1/TRP/Temp/gradleOut/src/main/shaders"/></dataSet><dataSet config="release"><source path="/home/jun/Unity-2017.4.4f1/TRP/Temp/gradleOut/src/release/shaders"/></dataSet></merger>

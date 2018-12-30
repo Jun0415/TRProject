@@ -26,14 +26,15 @@ public class ClearManager : MonoBehaviour {
 	public GameObject buttonMessageText;
 	public GameObject button;
 	public GameObject buttonReturn;
-
+/*
 	public void init() {
 		button.SetActive(false);
 		buttonMessage.SetActive(true);
 		DisplayMessage();
 	}
-
+*/
 	public void DisplayMessage() {
+		buttonMessage.SetActive(true);
 		if (messages.Length <= messageIndex) {
 			buttonMessage.SetActive(false);
 			buttonReturn.SetActive(true);

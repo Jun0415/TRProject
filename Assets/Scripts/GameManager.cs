@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour {
 			case 0:
 				if (doesHaveQ1 == true) {
 					textNumbers[index].GetComponent<Text>().text = ans;
-					if (ans.Equals("98")) {
+					if (ans.Equals("3")) {
 						switches[index].GetComponent<Image>().sprite = switch_on;
 						doneQ1 = true;
 					}
